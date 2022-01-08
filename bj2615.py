@@ -7,7 +7,7 @@
 
 global gx, gy
 
-#
+#동쪽
 def east(i, j):
     for i in range(19):
         for j in range(15):
@@ -22,12 +22,36 @@ def east(i, j):
                 if sumb == 5:
                     gx = i
                     gy = j
-                    print ("winner is black (way easy)", gx, gy)
+                    print ("winner is black (way east)", gx, gy)
                     break
                 if sumw == 10:
                     gx = i
                     gy = j
-                    print ("winner is white (way easy)", gx, gy)
+                    print ("winner is white (way east)", gx, gy)
+                    break
+                k += 1
+
+#남쪽
+def south(i, j):
+    for i in range(15):
+        for j in range(19):
+            sumb = 0 #초기화
+            sumw = 0 #초기화
+            k = 0
+            while k < 5:
+                if board[i+k][j] == 1:
+                    sumb += board[i+k][j]
+                if board[i+k][j] == 2:
+                    sumw += board[i+k][j]
+                if sumb == 5:
+                    gx = i
+                    gy = j
+                    print ("winner is black (way south)", gx, gy)
+                    break
+                if sumw == 10:
+                    gx = i
+                    gy = j
+                    print ("winner is white (way south)", gx, gy)
                     break
                 k += 1
 
@@ -51,3 +75,4 @@ print("############################################################")
 
 #함수 호출 부분
 east(0,0)
+south(0,0)
