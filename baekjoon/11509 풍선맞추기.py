@@ -13,24 +13,33 @@
 # h가 0보다 크면 h = balloon[i] 넣고 화살 쏨 -> shoot +1 해주기
 # i = 0, i ~ h 까지 for문 돌려서 balloon[i] == h-i 면 balloon[i] = 0
 # sum(balloon) == 0 이면 끝
+#시간초과 - 답은 나오는데 소스가 쓸데없이 지저분함
+#N = int(input())
+#balloon = list(map(int, input().split()))
+#shoot = 0
+#h = 0
+# for i in range(N):
+#    if balloon[i] > 0 :
+#        shoot += 1
+#        h = balloon[i]
+#        k = 0
+#        for j in range (i, N):
+#            if balloon[j] == h-k :
+#                balloon[j] = 0
+#            k += 1
+#        if sum(balloon) == 0 :
+#            print(shoot)
+#            break
+
+
+# 새로 짜야됨
+# H에서 발사된 화살은 계속 H 높이를 유지하다가 풍선을 터뜨리면 H-1이 되는 거였음
+# 게임에서 처럼 오른쪽으로 이동하면서 -1되는게 아님
+# 원래 답도 틀렸던거고 운이 좋아서 시간초과가 뜬 것 같다
 
 
 N = int(input())
-
 balloon = list(map(int, input().split()))
-shoot = 0
+arrow = 0
 h = 0
 
-#시간초과 - 답은 나오는데 소스가 쓸데없이 지저분함
-for i in range(N):
-    if balloon[i] > 0 :
-        shoot += 1
-        h = balloon[i]
-        k = 0
-        for j in range (i, N):
-            if balloon[j] == h-k :
-                balloon[j] = 0
-            k += 1
-        if sum(balloon) == 0 :
-            print(shoot)
-            break

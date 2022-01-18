@@ -68,14 +68,14 @@ def southwest(i, j):
                 if board[i+k][j-k] == 2:
                     sumw += board[i+k][j-k]
                 if sumb == 5:
-                    gx = i+1
-                    gy = j+1
+                    gx = i+1+4
+                    gy = j+1-4
                     #print ("winner is black (way southwest)", gx, gy)
                     result = 1
                     break
                 if sumw == 10:
-                    gx = i+1
-                    gy = j+1
+                    gx = i+1+4
+                    gy = j+1-4
                     #print ("winner is white (way southwest)", gx, gy)
                     result = 2
                     break
