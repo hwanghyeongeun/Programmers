@@ -8,7 +8,7 @@ N,M = map(int,input().split()) #N 기차번호 M명령 수
 train = [[0 for _ in range(20)] for _ in range(N)]
 temp = [] #비교할것
 
-for i in range(N):
+for i in range(M):
     c = list(map(int,input().split())) # command
     
     # 1 i x = i번째 기차의 x번째 자리에 사람 태우기
